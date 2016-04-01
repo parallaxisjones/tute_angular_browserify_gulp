@@ -7,7 +7,7 @@ var source = require('vinyl-source-stream')
 gulp.task('connect', function () {
 	connect.server({
 		root: 'public',
-		port: 4000
+		port: 3030
 	})
 })
 
@@ -22,13 +22,13 @@ gulp.task('browserify', function() {
 })
 
 gulp.task('sass', function() {
-	return sass('sass/style.sass')
-		.pipe(gulp.dest('public/css'))
+	return sass('./sass/style.sass')
+		.pipe(gulp.dest('./public/css'))
 })
 
 gulp.task('watch', function() {
-	gulp.watch('app/**/*.js', ['browserify'])
-	gulp.watch('sass/style.sass', ['sass'])
+	gulp.watch('./app/**/*.js', ['browserify'])
+	gulp.watch('./sass/style.sass', ['sass'])
 })
 
 gulp.task('default', ['connect', 'watch'])

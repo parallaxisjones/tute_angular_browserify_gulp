@@ -1,3 +1,6 @@
-module.exports = function($scope) {
-	$scope.message = 'Two birds killed with one stone!'
+module.exports = MainController;
+
+MainController.$inject = ["$scope"];
+function MainController($scope){
+	$scope.message = "god's vagina 2.0"
 }
